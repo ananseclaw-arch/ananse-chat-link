@@ -1,0 +1,10 @@
+<!doctype html><html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0f1115">
+<meta name="apple-mobile-web-app-title" content="Ananse"><title>Ananse</title>
+<style>body{background:#0f1115;color:#9aa0aa;font:16px -apple-system,sans-serif;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;text-align:center}</style>
+</head><body><div id="m">Opening Ananse…</div><script>
+fetch("url.json?t="+Date.now(),{cache:"no-store"}).then(r=>r.json()).then(j=>{
+ if(/^https:\/\/[a-z0-9-]+\.trycloudflare\.com$/.test(j.url)) location.replace(j.url);
+ else document.getElementById("m").textContent="Ananse is offline right now.";
+}).catch(()=>document.getElementById("m").textContent="Ananse is offline right now.");
+</script></body></html>
